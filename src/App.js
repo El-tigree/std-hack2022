@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import {
+  ActionCard,
   Features4x1,
   HeroLayout2,
   MarketingFooter,
@@ -11,27 +12,14 @@ function App() {
   return (
 
     <div className='App'>
-      <NavBar/>
-      <HeroLayout2></HeroLayout2>
-      <Features4x1></Features4x1>
-      <MarketingFooter></MarketingFooter>
+      <NavBar width={"100vw"}
+        overrides= {{"Dashboard": {title : "Te"} }}/>
+      <HeroLayout2 width={"100vw"}>
+        <ActionCard></ActionCard>
+      </HeroLayout2>
+      <Features4x1 width={"100vw"}></Features4x1>
+      <MarketingFooter width={"100vw"}></MarketingFooter>
     </div>
-    // <><NavBar /><div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div></>
   );
 }
 

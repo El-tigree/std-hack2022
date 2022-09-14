@@ -1,0 +1,43 @@
+type Business @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  descirption: String
+  image: String
+  rating: String
+  BusinessProducts: [BusinessProduct] @hasMany(indexName: "byBusiness", fields: ["id"])
+}
+
+type BusinessProduct @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  Product: Product @hasOne
+  businessID: ID! @index(name: "byBusiness")
+}
+
+type Cart @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  CartItes: [CartIte] @hasMany(indexName: "byCart", fields: ["id"])
+}
+
+type CartIte @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  untitledfield: String
+  Product: Product @hasOne
+  cartID: ID! @index(name: "byCart")
+}
+
+type Product @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  description: String
+  rating: Int
+  price: Float
+}
+
+type User @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  userrname: String
+  firstname: String
+  lastname: String
+  image: String
+  Cart: Cart @hasOne
+}

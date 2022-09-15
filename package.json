@@ -2,8 +2,7 @@
   "name": "metabank",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
-  "proxy": "http://localhost:5000",
+  "homepage": "https://main.dzkq1sx2ecsl6.amplifyapp.com/",
   "dependencies": {
     "@aws-amplify/ui-react": "^3.5.1",
     "@testing-library/jest-dom": "^5.16.5",
